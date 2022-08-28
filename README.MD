@@ -33,14 +33,19 @@ $ source setup.sh
 5. Run the development server
 
 python3 app.py or
+
 $ export FLASK_APP=myapp
+
 $ export FLASK_ENV=development
+
 flask run
 
 # Testing
 
 $ python3 manage.py db downgrade
+
 $ python3 manage.py db upgrade
+
 $ python3 manage.py seed
 
 
