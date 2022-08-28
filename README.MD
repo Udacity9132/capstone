@@ -6,8 +6,11 @@ Heroku URL: https://capstone-uda.herokuapp.com/
 # Tech Stack
 
 Database: Postgres
+
 Server language and framework: Python and Flask
+
 Authentication service: Auth0
+
 Deployment: Heroku
 
 # Getting started
@@ -22,7 +25,9 @@ $ pip3 install -r requirements.txt
 3. Run source setup.sh to set the JWTs and auth0 credentials and set up the Database
 
 $ python3 manage.py db upgrade
+
 $ python3 manage.py seed
+
 $ source setup.sh
 
 5. Run the development server
@@ -65,7 +70,7 @@ GET '/movies'
 - Example: curl http://127.0.0.1:5000/movies
 
 {
-  "movies": 
+  "movies":
   [{
     "title": example movie,
     "release_date": "2022-01-01",
@@ -84,7 +89,7 @@ GET '/actors'
 - Example: curl http://127.0.0.1:5000/actors
 
 {
-  "actors": 
+  "actors":
   [{
     "age": 25,
     "gender": "male",
@@ -104,7 +109,7 @@ GET '/movies/<int:id>'
 - Example: curl http://127.0.0.1:5000/movies/1
 
 {
-  "movie": 
+  "movie":
   {
     "title": example movie,
     "release_date": "2022-01-01",
@@ -119,7 +124,7 @@ GET '/actors/<int:id>'
 - Example: curl http://127.0.0.1:5000/actors/1
 
 {
-  "actor": 
+  "actor":
   {
     "age": 25,
     "gender": "male",
@@ -135,7 +140,8 @@ POST '/movies'
 - Example: curl http://127.0.0.1:5000/movies -X POST - H '{"Content-Type: application/json", "Authorization: Bearer <TOKEN>}' -d '{"title": "example movie", "release_date": "2022-01-01"}'
 
 {
-  "movies": {
+  "movies":
+  {
     "title": "example movie",
     "release_date": "2022-01-01",
     "id": 4,
@@ -150,7 +156,8 @@ POST '/actors'
 - Example: curl http://127.0.0.1:5000/actors -X POST -H "Content-Type: application/json" -d '{ "name": "Michael", "age": 25, "gender": "male" }'
 
 {
-  "actor": {
+  "actor":
+  {
     "age": 25,
     "gender": "male",
     "id": 4,
@@ -165,7 +172,8 @@ PATCH '/movies/int:id'
 - Example: curl http://127.0.0.1:5000/movies -X PATCH - H '{"Content-Type: application/json", "Authorization: Bearer <TOKEN>}' -d '{"title": "example movie", "release_date": "2022-01-01"}'
 
 {
-  "movies": {
+  "movies":
+  {
     "title": "example movie",
     "release_date": "2022-01-01",
     "id": 4,
@@ -179,7 +187,8 @@ PATCH '/actors/int:id'
 - Example: curl http://127.0.0.1:5000/actors -X PATCH -H "Content-Type: application/json" -d '{ "name": "Michael", "age": 25, "gender": "male" }'
 
 {
-  "actor": {
+  "actor":
+  {
     "age": 25,
     "gender": "male",
     "id": 4,
