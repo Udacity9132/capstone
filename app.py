@@ -25,13 +25,6 @@ def create_app(test_config=None):
   
     # db_drop_and_create_all()
 
-    # Landing Page 
-
-    @app.route('/')
-    def index():
-        return render_template('index.html')
-
-
     # GET - Movies
 
     @app.route('/movies')
