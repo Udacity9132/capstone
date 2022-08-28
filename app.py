@@ -68,8 +68,8 @@ def create_app(test_config=None):
 
     # POST - Movies
 
-    @app.route('/movies', Methods=['POST'])
-    @requires_auth('get:movies')
+    @app.route('/movies', methods=['POST'])
+    @requires_auth('post:movies')
     def add_movie(payload):
         data = request.get_json()
         movie = Movie(
@@ -92,7 +92,7 @@ def create_app(test_config=None):
 
     # PATCH - Movies
 
-    @app.route('/movies/<int:id>', Methods=['PATCH'])
+    @app.route('/movies/<int:id>', methods=['PATCH'])
     @requires_auth('patch:movies')
     def update_movie(payload, id):
         data = request.get_json()
@@ -123,7 +123,7 @@ def create_app(test_config=None):
 
     # DELETE - Movies
 
-    @app.route('/movies/<int:id>', Methods=['DELETE'])
+    @app.route('/movies/<int:id>', methods=['DELETE'])
     @requires_auth('delete:movies')
     def delete_movie(payload, id):
 
@@ -184,7 +184,7 @@ def create_app(test_config=None):
 
     # POST - Actors
 
-    @app.route('/actors', Methods=['POST'])
+    @app.route('/actors', methods=['POST'])
     @requires_auth('post:actors')
     def add_actor(payload):
 
@@ -213,7 +213,7 @@ def create_app(test_config=None):
 
     # Patch - Actors
 
-    @app.route('/actors/<int:id>', Methods=['PATCH'])
+    @app.route('/actors/<int:id>', methods=['PATCH'])
     @requires_auth('patch:actors')
     def patch_actor(payload, id):
 
@@ -247,7 +247,7 @@ def create_app(test_config=None):
 
     # DELETE - Actors
 
-    @app.route('/actors', Methods=['DELETE'])
+    @app.route('/actors', methods=['DELETE'])
     @requires_auth('delete:actors')
     def delete_actor(payload, id):
         actor = Actor.query.filter(Actor.id == id).one_or_none()
